@@ -12,18 +12,18 @@ console.log (prezzoFinale2);
 if( etaUtente < 18){
     
     prezzoFinale = (product * 20 / 100) ;
-    document.getElementById('km').innerHTML = prezzoFinale;
+    document.getElementById('km').innerHTML = prezzoFinale .toPrecision(2) ;
 
 } else if (etaUtente >= 18 && etaUtente <= 65) { 
 
     product = (0.21 * kmUtente) .toPrecision(2);
-    document.getElementById('output').innerHTML = product;
-    
+    document.getElementById('output').innerHTML = product .toPrecision(2) ;
+
 } else if( etaUtente >65){
 
     prezzoFinale2 = product - (product * 40 / 100) ;
     
-    document.getElementById('km-over').innerHTML = prezzoFinale2;
+    document.getElementById('km-over').innerHTML = prezzoFinale2 .toPrecision(2) ;
 }
 
 
