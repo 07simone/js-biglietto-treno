@@ -1,27 +1,32 @@
 const etaUtente = parseInt (prompt("Quanti anni hai?"));
 const kmUtente = parseInt (prompt("Quanti km farai?"));
 
-let outputlog ="";
-let product = (0.21 * kmUtente) .toPrecision(4);
+/* let outputlog =""; */
+let product = (0.21 * kmUtente) .toPrecision(2);
 console.log (product); 
-let prezzoFinale = product - (product * 40 / 100);
+let prezzoFinale = (product * 20 / 100);
 console.log (prezzoFinale); 
-let prezzoFinale2 = product - (product * 20 / 100);
+let prezzoFinale2 = product - (product * 40 / 100) ;
 console.log (prezzoFinale2); 
 
 if( etaUtente < 18){
     
-    outputlog="il prezzo sarà scontato del 20%";
+    prezzoFinale = (product * 20 / 100) ;
+    document.getElementById('km').innerHTML = prezzoFinale;
 
 } else if (etaUtente >= 18 && etaUtente <= 65) { 
 
-    outputlog = "il prezzo del biglietto sarà pieno"
-
+    product = (0.21 * kmUtente) .toPrecision(2);
+    document.getElementById('output').innerHTML = product;
+    
 } else if( etaUtente >65){
 
-    outputlog ="il prezzo del biglietto sarà sacontato del 40%"
-
+    prezzoFinale2 = product - (product * 40 / 100) ;
+    
+    document.getElementById('km-over').innerHTML = prezzoFinale2;
 }
 
 
-document.getElementById('output').innerHTML = outputlog;
+
+
+
